@@ -48,19 +48,6 @@ To run this project locally:
 
 ---
 
-## File Structure
-
-```
-stopper/
-│
-├── index.html        # The main HTML file with the app layout
-├── style.css         # CSS file for styling the app's design
-├── script.js         # JavaScript file managing logic for clock, stopwatch, and countdown
-└── README.md         # Project documentation (this file)
-```
-
----
-
 ## How It Works
 
 ### 1. Real-Time Clock
