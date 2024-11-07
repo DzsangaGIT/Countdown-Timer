@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, #1e1e1e, #2c3e50);
+    background-attachment: fixed;
+}
+
+/* Main container */
+.container {
+    background: rgba(28, 40, 51, 0.8);
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Main title */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: #f39c12;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+/*gradient effect */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Section title */
+h2 {
+    font-size: 1.7rem;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Section with time display */
+#clockSection, #stopwatchSelection, #countdownSection {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Time display */
+#clockDisplay, #stopwatchDisplay, #countdownDisplay {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #ecf0f1;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons */
+button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+button:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(0.98) translateY(2px);
+}
+
+/* Countdown input */
+#countdownTarget {
+    background: #34495e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1.1rem;
+    width: 80%;
+    max-width: 320px;
+    margin-top: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#countdownTarget:focus {
+    border-color: #3498db;
+}
+
+/* Cool fade-in animation for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#clockSection, #stopwatchSelection, #countdownSection {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #clockDisplay, #stopwatchDisplay, #countdownDisplay {
+        font-size: 1.8rem;
+    }
+}
