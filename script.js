@@ -51,7 +51,7 @@ function startCountdown() {
         const remaining = targetDate - now;
         if (remaining <= 0) {
             clearInterval(countdownInterval);
-            document.getElementById('countdownDisplay').textContent = "Time's up!";
+            document.getElementById('countdownDisplay').textContent = "Letelt az idő!";
             return;
         }
 
